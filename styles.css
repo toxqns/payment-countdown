@@ -16,36 +16,49 @@ body {
     position: relative;
 }
 
-/* Snow effect */
-body::before {
-    content: '';
+/* Realistic canvas snow */
+#snowCanvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        radial-gradient(2px 2px at 20px 30px, #eee, rgba(255, 255, 255, 0)),
-        radial-gradient(2px 2px at 60px 70px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(1px 1px at 50px 50px, #ddd, rgba(255, 255, 255, 0)),
-        radial-gradient(1px 1px at 130px 80px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(2px 2px at 90px 10px, #eee, rgba(255, 255, 255, 0));
-    background-repeat: repeat;
-    background-size: 200px 200px;
-    animation: snow 20s linear infinite;
     pointer-events: none;
     z-index: 1;
 }
 
-@keyframes snow {
-    0% {
-        transform: translateY(-100vh) translateX(0);
-    }
-    100% {
-        transform: translateY(100vh) translateX(100px);
-    }
+/* Top-right GIF widget */
+.gif-widget {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 180px;
+    z-index: 5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
 
+.gif-img {
+    width: 100%;
+    display: block;
+    opacity: 0.85;
+}
+
+.gif-label {
+    display: block;
+    background: rgba(0, 0, 0, 0.72);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 6px 8px;
+    line-height: 1.4;
+}
+
+/* Main card */
 .container {
     background: #1a1a1a;
     border-radius: 20px;
@@ -185,19 +198,25 @@ body::before {
 .status-message.almost {
     background: #2a2a2a;
     border-color: #fff;
-    color: #fff;
 }
 
 .status-message.close {
     background: #2a2a2a;
     border-color: #fff;
-    color: #fff;
 }
 
 .status-message.arrived {
     background: #2a2a2a;
     border-color: #fff;
-    color: #fff;
+}
+
+.status-message.bleak {
+    background: #1a0000;
+    border-color: #ff4444;
+}
+
+.status-message.bleak p {
+    color: #ff6666;
 }
 
 @media (max-width: 600px) {
@@ -226,5 +245,11 @@ body::before {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+    }
+
+    .gif-widget {
+        width: 120px;
+        top: 10px;
+        right: 10px;
     }
 }
