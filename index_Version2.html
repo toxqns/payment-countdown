@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will Tre pay me on Friday?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Will Tre pay me on Friday?</h1>
+        
+        <div class="countdown-box">
+            <div class="countdown-days">
+                <span id="daysLeft" class="days-number">0</span>
+                <p class="days-label">days left</p>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-bar-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <p id="progressText" class="progress-text">0% Complete</p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-row">
+                <span class="info-label">Started:</span>
+                <span id="startDate" class="info-value">Feb 1, 2026</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Target Friday:</span>
+                <span id="targetDate" class="info-value">TBD</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Total Days:</span>
+                <span id="totalDays" class="info-value">0</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Days Elapsed:</span>
+                <span id="daysElapsed" class="info-value">0</span>
+            </div>
+        </div>
+
+        <div class="status-message">
+            <p id="statusMsg"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
